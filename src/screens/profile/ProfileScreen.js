@@ -1,15 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { ProductsContext } from '../../contexts/ProductsContext';
 
 export default function ProfileScreen({ navigation }) {
-  // Mock user data (já que auth não está sendo usado)
-  const user = {
-    email: 'usuario@exemplo.com',
-    uid: '1234567890abcdef',
-  };
+  const { mockUser } = useContext(ProductsContext);
 
   const handleLogout = () => {
-    // Aqui só faz a navegação para a lista, já que sem autenticação real
     navigation.replace('ListProducts');
   };
 
@@ -18,11 +14,15 @@ export default function ProfileScreen({ navigation }) {
       <Text style={styles.title}>Perfil do Usuário</Text>
       <View style={styles.infoContainer}>
         <Text style={styles.label}>E-mail:</Text>
-        <Text style={styles.info}>{user.email}</Text>
+        <Text style={styles.info}>{mockUser.email}</Text>
       </View>
       <View style={styles.infoContainer}>
         <Text style={styles.label}>UID:</Text>
-        <Text style={styles.info}>{user.uid}</Text>
+        <Text style={styles.info}>{mockUser.uid}</Text>
+      </View>
+      <View style={styles.infoContainer}>
+        <Text style={styles.label}>Nome:</Text>
+        <Text style={styles.info}>{mockUser.nome}</Text>
       </View>
       <TouchableOpacity style={styles.logoutButton} onPress={handleLogout} activeOpacity={0.8}>
         <Text style={styles.logoutButtonText}>Sair</Text>

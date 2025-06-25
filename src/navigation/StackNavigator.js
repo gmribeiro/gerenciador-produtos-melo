@@ -22,7 +22,7 @@ export default function StackNavigator() {
       <Stack.Screen
         name="ListProducts"
         component={ListProductsScreen}
-        options={{ title: 'Produtos' }}
+        options={{ title: 'Gerenciador de produtos' }}
       />
       <Stack.Screen
         name="AddProduct"

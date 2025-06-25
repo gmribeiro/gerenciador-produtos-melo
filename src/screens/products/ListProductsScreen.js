@@ -42,6 +42,7 @@ export default function ListProductsScreen() {
       <Text style={styles.productName}>{item.nome}</Text>
       <Text style={styles.productPrice}>R$ {item.preco.toFixed(2)}</Text>
       <Text style={styles.productDescription} numberOfLines={2}>{item.descricao}</Text>
+      <Text style={styles.createdBy}>Criado por: {item.criadoPorNome || 'Desconhecido'}</Text>
       <View style={styles.cardFooter}>
         <TouchableOpacity
           style={[styles.footerButton, styles.editButton]}
@@ -94,12 +95,7 @@ export default function ListProductsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1, 
-    paddingHorizontal: 16, 
-    paddingTop: 16,
-    // backgroundColor removido para ficar transparente
-  },
+  container: { flex: 1, paddingHorizontal: 16, paddingTop: 16, backgroundColor: '#e0e7ff' },
   addButton: { backgroundColor: '#4338ca', paddingVertical: 14, borderRadius: 8, alignItems: 'center', marginBottom: 10 },
   addButtonText: { color: '#fff', fontSize: 18, fontWeight: '700' },
   profileButton: { backgroundColor: '#6366f1', paddingVertical: 12, borderRadius: 8, alignItems: 'center', marginBottom: 20 },
@@ -108,6 +104,7 @@ const styles = StyleSheet.create({
   productName: { fontSize: 20, fontWeight: '700', color: '#4f46e5', marginBottom: 4 },
   productPrice: { fontSize: 16, fontWeight: '600', color: '#4f46e5', marginBottom: 6 },
   productDescription: { color: '#4f46e5', fontSize: 14, marginBottom: 10 },
+  createdBy: { fontSize: 12, color: '#64748b', marginBottom: 6, fontStyle: 'italic' },
   cardFooter: { flexDirection: 'row', justifyContent: 'space-between' },
   footerButton: { flex: 1, paddingVertical: 10, marginHorizontal: 4, borderRadius: 8, alignItems: 'center' },
   editButton: { backgroundColor: '#4338ca' },

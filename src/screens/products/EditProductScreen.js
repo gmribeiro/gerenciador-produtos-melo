@@ -8,10 +8,16 @@ export default function EditProductScreen({ route, navigation }) {
   const [nome, setNome] = useState(product.nome);
   const [preco, setPreco] = useState(product.preco.toString());
   const [descricao, setDescricao] = useState(product.descricao);
-  const { loadProducts } = useContext(ProductsContext);
+  const { loadProducts, mockUser } = useContext(ProductsContext);
 
   const handleUpdate = async () => {
-    await updateProduct(product.id, { nome, preco: parseFloat(preco), descricao });
+    await updateProduct(product.id, {
+      nome,
+      preco: parseFloat(preco),
+      descricao,
+      atualizadoPor: mockUser.uid,
+      atualizadoPorNome: mockUser.nome,
+    });
     loadProducts();
     navigation.goBack();
   };
@@ -23,7 +29,12 @@ export default function EditProductScreen({ route, navigation }) {
       <Text style={styles.label}>Preço:</Text>
       <TextInput style={styles.input} value={preco} onChangeText={setPreco} keyboardType="numeric" />
       <Text style={styles.label}>Descrição:</Text>
-      <TextInput style={[styles.input, { height: 100 }]} value={descricao} onChangeText={setDescricao} multiline />
+      <TextInput
+        style={[styles.input, { height: 100 }]}
+        value={descricao}
+        onChangeText={setDescricao}
+        multiline
+      />
 
       <TouchableOpacity style={styles.button} onPress={handleUpdate}>
         <Text style={styles.buttonText}>Atualizar</Text>
@@ -33,15 +44,15 @@ export default function EditProductScreen({ route, navigation }) {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20 },
-  label: { marginBottom: 4, fontWeight: 'bold', color: '#4f46e5' },
+  container: { padding: 20, backgroundColor: '#e0e7ff' },
+  label: { marginBottom: 4, fontWeight: 'bold' },
   input: {
     backgroundColor: '#f3f4f6',
     borderRadius: 6,
     padding: 10,
     marginBottom: 12,
     borderWidth: 2,
-    borderColor: '#4f46e5', // mesma cor azul da outra tela
+    borderColor: '#4f46e5',
     color: '#111827',
   },
   button: {
