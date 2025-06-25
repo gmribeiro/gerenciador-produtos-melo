@@ -94,7 +94,12 @@ export default function ListProductsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, paddingHorizontal: 16, paddingTop: 16, backgroundColor: '#e0e7ff' },
+  container: { 
+    flex: 1, 
+    paddingHorizontal: 16, 
+    paddingTop: 16,
+    // backgroundColor removido para ficar transparente
+  },
   addButton: { backgroundColor: '#4338ca', paddingVertical: 14, borderRadius: 8, alignItems: 'center', marginBottom: 10 },
   addButtonText: { color: '#fff', fontSize: 18, fontWeight: '700' },
   profileButton: { backgroundColor: '#6366f1', paddingVertical: 12, borderRadius: 8, alignItems: 'center', marginBottom: 20 },

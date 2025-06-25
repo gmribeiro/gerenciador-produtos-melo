@@ -23,7 +23,7 @@ export default function EditProductScreen({ route, navigation }) {
       <Text style={styles.label}>Preço:</Text>
       <TextInput style={styles.input} value={preco} onChangeText={setPreco} keyboardType="numeric" />
       <Text style={styles.label}>Descrição:</Text>
-      <TextInput style={styles.input} value={descricao} onChangeText={setDescricao} multiline />
+      <TextInput style={[styles.input, { height: 100 }]} value={descricao} onChangeText={setDescricao} multiline />
 
       <TouchableOpacity style={styles.button} onPress={handleUpdate}>
         <Text style={styles.buttonText}>Atualizar</Text>
@@ -40,6 +40,9 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     padding: 10,
     marginBottom: 12,
+    borderWidth: 2,
+    borderColor: '#4f46e5', // mesma cor azul da outra tela
+    color: '#111827',
   },
   button: {
     backgroundColor: '#4338ca',
