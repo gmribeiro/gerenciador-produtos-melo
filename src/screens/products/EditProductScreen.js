@@ -34,7 +34,7 @@ export default function EditProductScreen({ route, navigation }) {
 
 const styles = StyleSheet.create({
   container: { padding: 20 },
-  label: { marginBottom: 4, fontWeight: 'bold' },
+  label: { marginBottom: 4, fontWeight: 'bold', color: '#4f46e5' },
   input: {
     backgroundColor: '#f3f4f6',
     borderRadius: 6,

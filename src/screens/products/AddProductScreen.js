@@ -20,11 +20,31 @@ export default function AddProductScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Nome:</Text>
-      <TextInput style={styles.input} value={nome} onChangeText={setNome} />
+      <TextInput
+        style={styles.input}
+        value={nome}
+        onChangeText={setNome}
+        placeholder="Digite o nome do produto"
+        placeholderTextColor="#4f46e5"
+      />
       <Text style={styles.label}>Preço:</Text>
-      <TextInput style={styles.input} value={preco} onChangeText={setPreco} keyboardType="numeric" />
+      <TextInput
+        style={styles.input}
+        value={preco}
+        onChangeText={setPreco}
+        keyboardType="numeric"
+        placeholder="Digite o preço"
+        placeholderTextColor="#4f46e5"
+      />
       <Text style={styles.label}>Descrição:</Text>
-      <TextInput style={[styles.input, { height: 100 }]} value={descricao} onChangeText={setDescricao} multiline />
+      <TextInput
+        style={[styles.input, { height: 100 }]}
+        value={descricao}
+        onChangeText={setDescricao}
+        multiline
+        placeholder="Digite a descrição do produto"
+        placeholderTextColor="#4f46e5"
+      />
 
       <TouchableOpacity style={styles.button} onPress={handleAdd}>
         <Text style={styles.buttonText}>Cadastrar</Text>
@@ -35,7 +55,7 @@ export default function AddProductScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: { padding: 20 },
-  label: { marginBottom: 4, fontWeight: 'bold' },
+  label: { marginBottom: 4, fontWeight: 'bold', color: '#4f46e5' },
   input: {
     backgroundColor: '#f3f4f6',
     borderRadius: 6,
