@@ -6,7 +6,6 @@ export const ProductsContext = createContext();
 export function ProductsProvider({ children }) {
   const [products, setProducts] = useState([]);
 
-  // Mock user - simula o usuário logado
   const mockUser = {
     uid: '1234567890abcdef',
     nome: 'Luciano Salgado Prof',

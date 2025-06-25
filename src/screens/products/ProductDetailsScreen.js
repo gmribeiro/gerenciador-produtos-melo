@@ -16,7 +16,7 @@ export default function ProductDetailsScreen({ route }) {
 const styles = StyleSheet.create({
   container: {
     padding: 24,
-    backgroundColor: '#f9fafb', // tom claro neutro
+    backgroundColor: '#f9fafb',
     flexGrow: 1,
     justifyContent: 'flex-start',
   },
@@ -24,17 +24,17 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '700',
     marginBottom: 16,
-    color: '#3730a3', // azul mais escuro, elegante
+    color: '#3730a3', 
   },
   price: {
     fontSize: 22,
     fontWeight: '600',
     marginBottom: 20,
-    color: '#4338ca', // azul vibrante, destaque
+    color: '#4338ca', 
   },
   description: {
     fontSize: 18,
     lineHeight: 28,
-    color: '#4338ca', // cinza escuro para leitura confortável
+    color: '#4338ca', 
   },
 });

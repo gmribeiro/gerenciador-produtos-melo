@@ -10,7 +10,7 @@ export default function AddProductScreen({ navigation }) {
   const { loadProducts, mockUser } = useContext(ProductsContext);
 
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState(null); // { type: 'success' | 'error', text: string }
+  const [message, setMessage] = useState(null); 
   const [fadeAnim] = useState(new Animated.Value(0));
 
   const showMessage = (msg) => {
