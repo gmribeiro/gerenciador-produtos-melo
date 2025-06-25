@@ -5,7 +5,7 @@ import { deleteProduct } from '../../services/firestore/products';
 import { useNavigation } from '@react-navigation/native';
 
 export default function ListProductsScreen() {
-  const { products } = useContext(ProductsContext);
+  const { products, loadProducts } = useContext(ProductsContext);
   const navigation = useNavigation();
   const [loadingId, setLoadingId] = useState(null);
 
@@ -22,6 +22,7 @@ export default function ListProductsScreen() {
             setLoadingId(id);
             try {
               await deleteProduct(id);
+              loadProducts();
             } catch (error) {
               Alert.alert('Erro', 'Não foi possível excluir o produto.');
             }

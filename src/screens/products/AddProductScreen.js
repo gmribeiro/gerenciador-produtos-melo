@@ -24,7 +24,7 @@ export default function AddProductScreen({ navigation }) {
       <Text style={styles.label}>Preço:</Text>
       <TextInput style={styles.input} value={preco} onChangeText={setPreco} keyboardType="numeric" />
       <Text style={styles.label}>Descrição:</Text>
-      <TextInput style={styles.input} value={descricao} onChangeText={setDescricao} multiline />
+      <TextInput style={[styles.input, { height: 100 }]} value={descricao} onChangeText={setDescricao} multiline />
 
       <TouchableOpacity style={styles.button} onPress={handleAdd}>
         <Text style={styles.buttonText}>Cadastrar</Text>
@@ -41,6 +41,9 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     padding: 10,
     marginBottom: 12,
+    borderWidth: 2,
+    borderColor: '#4f46e5', // cor azul para a borda
+    color: '#111827',
   },
   button: {
     backgroundColor: '#4338ca',
